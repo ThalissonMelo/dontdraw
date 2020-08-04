@@ -1,0 +1,7 @@
+PG_USERNAME=postgres
+PG_PASSWORD=password
+PG_DATABASE=dontdraw_development
+PG_HOST=dontdraw_db
+PG_PORT=5432
+pidfile=/dontdraw/tmp/pids/server.pid
+RAILS_ENV=development

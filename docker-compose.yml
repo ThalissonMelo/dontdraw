@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:
+  dontdraw_db:
+    container_name: dontdraw_db
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    networks:
+      - dontdraw-network
+    volumes:
+      - dontdraw-pg-data:/var/lib/postgresql/data
+
+  dontdraw_web:
+    container_name: dontdraw_web
+    build : .
+    ports:
+      - 3000:3000
+    env_file : env
+    command: ["sh", "start.sh"]
+    networks:
+      - dontdraw-network
+    volumes:
+      - .:/dontdraw
+      - dontdraw-bundle:/usr/local/bundle
+    depends_on:
+      - dontdraw_db
+
+volumes:
+  dontdraw-pg-data:
+  dontdraw-bundle:
+
+networks:
+  dontdraw-network:
+    name: dontdraw-network
+    driver: bridge
