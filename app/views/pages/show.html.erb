@@ -1,4 +1,19 @@
 <div data-controller="draw">
+<canvas
+    id="myCanvas"
+    width="400"
+    height="400"
+    style="border:1px solid #000000;"
+    data-draw-color-value='black'>
+  </canvas>
+
+<script src="jscolor.js"></script>
+
+<p>
+    You can show the picker on the left side of the text input:
+    <input data-jscolor="{position:'left'}">
+</p>
+
   <p id="notice"><%= notice %></p>
 
   <p>
