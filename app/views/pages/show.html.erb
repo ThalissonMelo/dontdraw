@@ -9,6 +9,19 @@
     </canvas>
 
     <div style='display:block;margin-left: 20px;'>
+      <div style="margin-bottom:10px;display:flex;align-items: center;">
+        <select data-action="draw#changeMode" datastyle="height: 20px;" id="mode" name="mode">
+          <option value="Pencil">Pencil</option>
+          <option value="Circle">Circle</option>
+          <option value="Spray">Spray</option>
+          <option value="Pattern">Pattern</option>
+          <option value="hline">hline</option>
+          <option value="vline">vline</option>
+          <option value="square">square</option>
+          <option value="diamound">diamound</option>
+        </select>
+        <p style="margin-left: 10px">Mode</p>
+      </div>
       <div style="display: flex">
         <div id="parent" style="width: 20px;height:20px;border: solid 1px; margin-left: 20px"></div>
         <p style="margin:0; margin-left:10px">Line color</p>
