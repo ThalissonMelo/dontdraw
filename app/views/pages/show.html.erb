@@ -1,23 +1,42 @@
-<div data-controller="draw">
-<canvas
-    id="myCanvas"
-    width="400"
-    height="400"
-    style="border:1px solid #000000;"
-    data-draw-color-value='black'>
-  </canvas>
+<div data-controller="draw" >
+  <div style="display:flex">
+    <canvas
+      id="myCanvas"
+      width="600"
+      height="500"
+      style="border:1px solid #000000;"
+      data-draw-color-value='black'>
+    </canvas>
 
-<script src="jscolor.js"></script>
+    <div style='display:block;margin-left: 20px;'>
+      <div style="display: flex">
+        <div id="parent" style="width: 20px;height:20px;border: solid 1px; margin-left: 20px"></div>
+        <p style="margin:0; margin-left:10px">Line color</p>
+      </div>
 
-<p>
-    You can show the picker on the left side of the text input:
-    <input data-jscolor="{position:'left'}">
-</p>
+      <div style="display: flex;margin-top: 10px;">
+        <div id="parent2" style="width: 20px;height:20px;border: solid 1px; margin-left: 20px"></div>
+        <p style="margin:0; margin-left:10px">Shadow color</p>
+      </div>
 
-  <p id="notice"><%= notice %></p>
+      <div style="display: flex; margin-top: 10px;margin-left: 13px;align-items: center;">
+        <input style="width: 40px;height: 20px;" data-action="draw#changeLineWidth" type="number" id="lineWidth" name="lineWidth" min="1" max="150" value="1">
+        <p style="margin-left:10px;">Line width</p>
+      </div>
 
-  <p>
-    <strong>Url:</strong>
-    <%= @page.url %>
-  </p>
+      <div style="display: flex; margin-top: 10px;margin-left: 13px;align-items: center;">
+        <input style="width: 40px;height: 20px;" data-action="draw#changeShadowWidth" type="number" id="shadowWidth" name="shadowWidth" min="1" max="50" value="10">
+        <p style="margin-left:10px;">Shadow width</p>
+      </div>
+
+      <div style="display: flex; margin-top: 10px;margin-left: 13px;align-items: center;">
+        <input style="width: 40px;height: 20px;" data-action="draw#change ShadowOffset" type="number" id="shadowOffset" name="shadowOffset" min="1" max="50" value="5">
+        <p style="margin-left:10px;">Shadow offset</p>
+      </div>
+
+      <div style="display: flex">
+        <button style="margin:10px" data-action="draw#clearCanvas">clear</button>
+      </div>
+    </div>
+  </div>
 </div>
